@@ -1,0 +1,19 @@
+cmap w!! w !sudo tee > /dev/null %
+execute pathogen#infect()
+syntax enable
+colorscheme desert
+set listchars=tab:▸\ ,eol:¬
+set list
+set background=dark
+set encoding=utf8
+set ffs=unix,dos,mac
+set ai
+set si
+set relativenumber
+set mouse=a
+set hidden
+set magic
+set number
+map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+let g:UltiSnipsExpandTrigger="<tab>"
+filetype plugin on
