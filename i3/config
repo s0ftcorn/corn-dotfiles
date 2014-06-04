@@ -159,3 +159,5 @@ exec feh Dropbox/Bilder/Wallpaper/Aktuelle\ Auswahl/archlinux-256809.jpeg --bg-s
 bindsym $mod+Shift+l exec i3lock
 # compositing makes everything better
 exec --no-startup-id compton -b
+# dunst for notification
+exec --no-startup-id dunst
