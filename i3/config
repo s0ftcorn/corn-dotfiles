@@ -46,7 +46,13 @@ bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'Deja
 bindsym $mod+Right workspace next
 bindsym $mod+Left workspace prev
 
-# alternatively, you can use the cursor keys:
+#switch focused window
+bindsym $mod+Shift+h focus down
+bindsym $mod+Shift+j focus left
+bindsym $mod+Shift+k focus right
+bindsym $mod+Shift+l focus up
+
+#move focused window
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -147,8 +153,8 @@ bar {
 exec --no-startup-id xrdb -merge ~/.xresources
 # das nicht
 exec feh Dropbox/Bilder/Wallpaper/Aktuelle\ Auswahl/archlinux-256809.jpeg --bg-scale
-# mod+Shift+L sperrt den Bildschirm
-bindsym $mod+Shift+l exec i3lock
+# Ctrl+Alt+L locks the screen
+bindsym mod1+Ctrl+l exec i3lock
 # compositing makes everything better
 exec --no-startup-id compton -b
 # dunst for notification
