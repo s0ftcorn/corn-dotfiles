@@ -1,10 +1,10 @@
-URvxt.shading:		24
-
+URvxt*shading:	25
+URxvt*transparent: true
 urxvt*foreground: green
 urxvt*background: black
 urxvt.tintColor: gray
 
-URxvt.depth: 32
-URxvt.background: [50]#000000
+!URxvt.depth: 32
+!URxvt.background: [50]#000000
 
 URxvt*urlLauncher: google-chrome-stable

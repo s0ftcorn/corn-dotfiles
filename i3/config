@@ -47,10 +47,10 @@ bindsym $mod+Right workspace next
 bindsym $mod+Left workspace prev
 
 #switch focused window
-bindsym $mod+Shift+h focus down
-bindsym $mod+Shift+j focus left
-bindsym $mod+Shift+k focus right
-bindsym $mod+Shift+l focus up
+bindsym $mod+h focus down
+bindsym $mod+j focus left
+bindsym $mod+k focus right
+bindsym $mod+l focus up
 
 #move focused window
 bindsym $mod+Shift+Left move left
@@ -59,10 +59,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Shift+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+Shift+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
@@ -156,6 +156,6 @@ exec feh Dropbox/Bilder/Wallpaper/Aktuelle\ Auswahl/archlinux-256809.jpeg --bg-s
 # Ctrl+Alt+L locks the screen
 bindsym mod1+Ctrl+l exec i3lock
 # compositing makes everything better
-exec --no-startup-id compton -b
+#exec --no-startup-id compton -b
 # dunst for notification
 exec --no-startup-id dunst
