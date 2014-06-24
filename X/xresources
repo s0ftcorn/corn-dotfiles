@@ -1,10 +1,10 @@
-URvxt*shading:	25
-URxvt*transparent: true
 urxvt*foreground: green
-urxvt*background: black
-urxvt.tintColor: gray
-
-!URxvt.depth: 32
-!URxvt.background: [50]#000000
-
+URxvt.scrollWithBuffer:	true
+URxvt.font: xft:Droid Sans Slashed:pixelsize=10:Regular
+URxvt.boldFont: xft:Droid Sans Slashed:pixelsize=10:Bold
+URxvt.talicFont: xft:Droid Sans Slashed:pixelsize=10:Italic
+URxvt.bolditalicFont: xft:Droid Sans Slashed:pixelsize=10:Bold:Italic
 URxvt*urlLauncher: google-chrome-stable
+Xft.antialias: true
+URxvt.depth: 32
+URxvt.background: [33]#000000

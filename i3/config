@@ -40,7 +40,7 @@ bindsym $mod+Shift+q kill
 # https://github.com/enkore/j4-dmenu-desktop
 # https://aur.archlinux.org/packages/j4-dmenu-desktop-git/
 # bindsym $mod+space exec --no-startup-id j4-dmenu-desktop
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-10' -l 20"
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i"
 
 #switch workspaces with arrowkeys, convience!
 bindsym $mod+Right workspace next
@@ -156,10 +156,13 @@ bar {
 # das hier könnte man wahrscheinlich eleganter lösen
 exec --no-startup-id xrdb -merge ~/.xresources
 # das nicht
-exec feh Dropbox/Bilder/Wallpaper/Aktuelle\ Auswahl/archlinux-256809.jpeg --bg-scale
+exec --no-startup-id feh /home/corn/Dropbox/Bilder/Wallpaper/Aktuelle\ Auswahl/i3keyboardshortcuts.png --bg-scale
 # Ctrl+Alt+L locks the screen
 bindsym mod1+Ctrl+l exec i3lock
 # compositing makes everything better
-#exec --no-startup-id compton -b
+exec --no-startup-id compton -CGb
 # dunst for notification
 exec --no-startup-id dunst
+# Mediakeys woop woop
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse set Master playback 2%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse set Master playback 2%- unmute
