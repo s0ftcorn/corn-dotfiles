@@ -148,7 +148,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command 	i3status
+        status_command 	i3status #~/.i3/statusbar_windowtitle.sh
 	position 	top
 }
 #dropbox
@@ -156,13 +156,15 @@ bar {
 # das hier könnte man wahrscheinlich eleganter lösen
 exec --no-startup-id xrdb -merge ~/.xresources
 # das nicht
-exec --no-startup-id feh /home/corn/Dropbox/Bilder/Wallpaper/Aktuelle\ Auswahl/i3keyboardshortcuts.png --bg-scale
+exec --no-startup-id feh /home/corn/Dropbox/Bilder/Wallpaper/Aktuelle\ Auswahl/ksp01.jpg --bg-scale
 # Ctrl+Alt+L locks the screen
-bindsym mod1+Ctrl+l exec i3lock
+bindsym mod1+Ctrl+l exec slimlock
 # compositing makes everything better
 exec --no-startup-id compton -CGb
 # dunst for notification
 exec --no-startup-id dunst
 # Mediakeys woop woop
-bindsym XF86AudioRaiseVolume exec amixer -q -D pulse set Master playback 2%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q -D pulse set Master playback 2%- unmute
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse set Master playback 7%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse set Master playback 7%- unmute
+
+new_window pixel
