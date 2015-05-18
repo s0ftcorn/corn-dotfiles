@@ -1,4 +1,10 @@
-urxvt*foreground: green
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.perl-ext-common:  font-size
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
 URxvt.scrollWithBuffer:	true
 URxvt.font: xft:Consolas:pixelsize=12:Regular
 URxvt.boldFont: xft:Consolas:pixelsize=12:Bold
@@ -7,4 +13,38 @@ URxvt.bolditalicFont: xft:Consolas:pixelsize=12:Bold:Italic
 URxvt*urlLauncher: google-chrome-stable
 Xft.antialias: true
 URxvt.depth: 32
-URxvt.background: [90]#000000
+Rxvt.background: [90]#151515
+
+*foreground: #D7D0C7
+
+!black
+! *color0:     #AF875F
+! *color8:     #AF875F
+*color0:     #101010
+*color8:     #404040
+!red
+*color1:     #E84F4F
+*color9:     #D23D3D
+!green
+*color2:     #B8D68C
+*color10:    #A0CF5D
+!yellow
+*color3:     #E1AA5D
+*color11:    #F39D21
+!blue
+*color4:     #7DC1CF
+*color12:    #4E9FB1
+!magenta
+*color5:     #9B64FB
+*color13:    #8542FF
+!cyan
+*color6:     #6D878D
+*color14:    #42717B
+!white
+*color7:     #dddddd
+*color15:    #dddddd
+
+URxvt*borderColor:        #151515
+URxvt*colorBD:            #ffffff
+URxvt*cursorColor:        #ff8939
+URxvt*cursorColor2:       #151515
