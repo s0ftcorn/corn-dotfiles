@@ -171,3 +171,23 @@ new_window pixel
 
 #spotify fix
 for_window [class="^Spotify Premium$"] floating enable
+
+#xmodmap
+exec xmodmap /home/corn/.Xmodmap
+
+#toggle sound
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+#brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 15
+bindsym XF86MonBrightnessDown exec xbacklight -dec 15
+
+#Soundboard
+bindsym Mod3+g exec mplayer /home/corn/sounds/grille.ogg
+bindsym Mod3+Escape exec killall -9 mplayer
+bindsym Mod3+s exec mplayer /home/corn/sounds/spanishflea.mp3
+bindsym Mod3+r exec mplayer /home/corn/sounds/rimshot.mp3
+bindsym Mod3+t exec mplayer /home/corn/sounds/troete.ogg
+bindsym Mod3+f exec mplayer /home/corn/sounds/fullbridgerectifier.m4a
+bindsym Mod3+a exec mplayer /home/corn/sounds/sadtrombone.mp3
+bindsym Mod3+b exec mplayer /home/corn/sounds/buzzer.ogg
