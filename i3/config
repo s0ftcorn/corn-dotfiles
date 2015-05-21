@@ -157,8 +157,8 @@ bar {
 exec --no-startup-id xrdb -merge ~/.xresources
 # das nicht
 exec --no-startup-id feh /home/corn/Dropbox/Bilder/Wallpaper/Aktuelle\ Auswahl/ksp01.jpg --bg-scale
-# Ctrl+Alt+L locks the screen
-bindsym mod1+Ctrl+l exec slimlock
+# XF86ScreenSaver locks the screen
+bindsym XF86ScreenSaver exec slimlock
 # compositing makes everything better
 exec --no-startup-id compton -CGb
 # dunst for notification
@@ -183,7 +183,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 15
 bindsym XF86MonBrightnessDown exec xbacklight -dec 15
 
 #Soundboard
-bindsym Mod3+g exec mplayer /home/corn/sounds/grille.ogg
+bindsym Mod3+z exec mplayer /home/corn/sounds/grille.ogg
 bindsym Mod3+Escape exec killall -9 mplayer
 bindsym Mod3+s exec mplayer /home/corn/sounds/spanishflea.mp3
 bindsym Mod3+r exec mplayer /home/corn/sounds/rimshot.mp3
@@ -191,3 +191,5 @@ bindsym Mod3+t exec mplayer /home/corn/sounds/troete.ogg
 bindsym Mod3+f exec mplayer /home/corn/sounds/fullbridgerectifier.m4a
 bindsym Mod3+a exec mplayer /home/corn/sounds/sadtrombone.mp3
 bindsym Mod3+b exec mplayer /home/corn/sounds/buzzer.ogg
+bindsym Mod3+g exec mplayer /home/corn/sounds/gg.mp3
+bindsym Mod3+c exec mplayer /home/corn/sounds/scratch.ogg

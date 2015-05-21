@@ -48,3 +48,6 @@ URxvt*borderColor:        #151515
 URxvt*colorBD:            #ffffff
 URxvt*cursorColor:        #ff8939
 URxvt*cursorColor2:       #151515
+
+!bell beep foo
+URxvt.urgentOnBell:  true
