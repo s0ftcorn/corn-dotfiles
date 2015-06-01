@@ -13,7 +13,8 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:Inconsolata 12px
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
@@ -151,6 +152,14 @@ bar {
         status_command 	i3status #~/.i3/statusbar_windowtitle.sh
 	position 	top
 }
+
+#chrome immer auf 1:web
+assign [class="Google-chrome-stable"] → 1:web
+#thunderbird immer auf 2:mail
+assign [class="Mail" instance="Thunderbird"] → 2:mail
+#urxvt+irssi immer auf 10:irssi
+assign [class="^URxvt$" title="irssi  /home/corn"] → 10
+
 #dropbox
 #exec --no-startup-id dropboxd
 # das hier könnte man wahrscheinlich eleganter lösen
@@ -182,6 +191,24 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 bindsym XF86MonBrightnessUp exec xbacklight -inc 15
 bindsym XF86MonBrightnessDown exec xbacklight -dec 15
 
+# Shutdown, Reboot, Lock Screen, and Logout #657b83
+set $sysmenu "system:  [P]oweroff  re[B]oot  [L]ock  logou[T] "
+bindsym $mod+Shift+Return      mode $sysmenu
+mode $sysmenu {
+    bindsym p         exec systemctl poweroff
+    bindsym b         exec systemctl reboot
+    bindsym l         exec slimlock, mode "default"
+    bindsym t         exec --no-startup-id i3-msg exit, mode "default"
+    bindsym Return    mode "default"
+    bindsym Escape    mode "default"
+}
+
+#Rotate display
+bindsym $mod+Mod3+Up exec xrandr --output LVDS1 --rotate inverted
+bindsym $mod+Mod3+Down exec xrandr --output LVDS1 --rotate normal
+bindsym $mod+Mod3+Left exec xrandr --output LVDS1 --rotate left
+bindsym $mod+Mod3+Right exec xrandr --output LVDS1 --rotate right
+
 #Soundboard
 bindsym Mod3+z exec mplayer /home/corn/sounds/grille.ogg
 bindsym Mod3+Escape exec killall -9 mplayer
@@ -193,3 +220,9 @@ bindsym Mod3+a exec mplayer /home/corn/sounds/sadtrombone.mp3
 bindsym Mod3+b exec mplayer /home/corn/sounds/buzzer.ogg
 bindsym Mod3+g exec mplayer /home/corn/sounds/gg.mp3
 bindsym Mod3+c exec mplayer /home/corn/sounds/scratch.ogg
+bindsym Mod3+n exec mplayer /home/corn/sounds/nootnoot.mp3
+bindsym Mod3+2 exec mplayer /home/corn/sounds/24hours.mp3
+bindsym Mod3+p exec mplayer /home/corn/sounds/applause.mp3
+bindsym Mod3+k exec mplayer /home/corn/sounds/kidsyeah.ogg
+bindsym Mod3+e exec mplayer /home/corn/sounds/rewind.ogg
+bindsym Mod3+j exec mplayer /home/corn/sounds/jeopardy.mp3
