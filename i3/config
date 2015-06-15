@@ -192,13 +192,13 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 15
 bindsym XF86MonBrightnessDown exec xbacklight -dec 15
 
 # Shutdown, Reboot, Lock Screen, and Logout #657b83
-set $sysmenu "system:  [P]oweroff  re[B]oot  [L]ock  logou[T] "
+set $sysmenu "system:  [P]oweroff  re[B]oot  [L]ock  [S]uspend "
 bindsym $mod+Shift+Return      mode $sysmenu
 mode $sysmenu {
     bindsym p         exec systemctl poweroff
     bindsym b         exec systemctl reboot
     bindsym l         exec slimlock, mode "default"
-    bindsym t         exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s         exec systemctl suspend
     bindsym Return    mode "default"
     bindsym Escape    mode "default"
 }
@@ -226,3 +226,8 @@ bindsym Mod3+p exec mplayer /home/corn/sounds/applause.mp3
 bindsym Mod3+k exec mplayer /home/corn/sounds/kidsyeah.ogg
 bindsym Mod3+e exec mplayer /home/corn/sounds/rewind.ogg
 bindsym Mod3+j exec mplayer /home/corn/sounds/jeopardy.mp3
+bindsym Mod3+o exec mplayer /home/corn/sounds/badadipoopi.mp3
+bindsym Mod3+i exec mplayer /home/corn/sounds/bike_horn.mp3
+bindsym Mod3+d exec mplayer /home/corn/sounds/dora.mp3
+bindcode Mod3+47 exec mplayer /home/corn/sounds/hwnpbööh.mp3
+bindsym Mod3+w exec mplayer /home/corn/sounds/oopsydaisy.mp3
