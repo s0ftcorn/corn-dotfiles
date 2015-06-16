@@ -14,6 +14,13 @@ set mouse=a
 set hidden
 set magic
 set number
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+set history=1000
+set undolevels=1000
+set title
 map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
-let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsExpandTrigger="<tab>"
 filetype plugin on
