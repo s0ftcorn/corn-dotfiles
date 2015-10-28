@@ -1,5 +1,4 @@
 cmap w!! w !sudo tee > /dev/null %
-execute pathogen#infect()
 syntax enable
 colorscheme desert
 set listchars=tab:▸\ ,eol:¬
@@ -22,5 +21,4 @@ set history=1000
 set undolevels=1000
 set title
 map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
-"let g:UltiSnipsExpandTrigger="<tab>"
 filetype plugin on
