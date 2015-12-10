@@ -1,6 +1,7 @@
 cmap w!! w !sudo tee > /dev/null %
 syntax enable
 colorscheme desert
+set cc=80
 set listchars=tab:▸\ ,eol:¬
 set list
 set background=dark

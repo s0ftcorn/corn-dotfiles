@@ -166,7 +166,7 @@ assign [class="^URxvt$" title="irssi  /home/corn"] → 10:irssi
 # das hier könnte man wahrscheinlich eleganter lösen
 exec --no-startup-id xrdb -merge ~/.xresources
 # das nicht
-exec --no-startup-id feh /home/corn/Dropbox/Bilder/Wallpaper/Aktuelle\ Auswahl/ksp01.jpg --bg-scale
+exec --no-startup-id feh /home/corn/Dropbox/Bilder/Wallpaper/Aktuelle\ Auswahl/have_a_day_fallout.png --bg-scale
 # XF86ScreenSaver locks the screen
 bindsym XF86ScreenSaver exec slimlock
 # compositing makes everything better
@@ -176,6 +176,10 @@ exec --no-startup-id dunst
 # Mediakeys woop woop
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse set Master playback 7%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse set Master playback 7%- unmute
+bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 
 new_window pixel
 
@@ -211,28 +215,28 @@ bindsym $mod+Mod3+Left exec xrandr --output LVDS1 --rotate left
 bindsym $mod+Mod3+Right exec xrandr --output LVDS1 --rotate right
 
 #Soundboard
-bindsym Mod3+z exec mplayer /home/corn/sounds/grille.ogg
+bindsym Mod3+z exec mplayer -cache-min 50  /home/corn/sounds/grille.ogg
 bindsym Mod3+Escape exec killall -9 mplayer
-bindsym Mod3+s exec mplayer /home/corn/sounds/spanishflea.mp3
-bindsym Mod3+r exec mplayer /home/corn/sounds/rimshot.mp3
-bindsym Mod3+t exec mplayer /home/corn/sounds/troete.ogg
-bindsym Mod3+f exec mplayer /home/corn/sounds/fullbridgerectifier.m4a
-bindsym Mod3+a exec mplayer /home/corn/sounds/sadtrombone.mp3
-bindsym Mod3+b exec mplayer /home/corn/sounds/buzzer.ogg
-bindsym Mod3+g exec mplayer /home/corn/sounds/gg.mp3
-bindsym Mod3+c exec mplayer /home/corn/sounds/scratch.ogg
-bindsym Mod3+n exec mplayer /home/corn/sounds/nootnoot.mp3
-bindsym Mod3+2 exec mplayer /home/corn/sounds/24hours.mp3
-bindsym Mod3+p exec mplayer /home/corn/sounds/applause.mp3
-bindsym Mod3+k exec mplayer /home/corn/sounds/kidsyeah.ogg
-bindsym Mod3+e exec mplayer /home/corn/sounds/rewind.ogg
-bindsym Mod3+j exec mplayer /home/corn/sounds/jeopardy.mp3
-bindsym Mod3+o exec mplayer /home/corn/sounds/badadipoopi.mp3
-bindsym Mod3+i exec mplayer /home/corn/sounds/bike_horn.mp3
-bindsym Mod3+d exec mplayer /home/corn/sounds/dora.mp3
-bindcode Mod3+47 exec mplayer /home/corn/sounds/hwnpbööh.mp3
-bindsym Mod3+w exec mplayer /home/corn/sounds/oopsydaisy.mp3
-bindsym Mod3+y exec mplayer /home/corn/sounds/bennyhill.mp3
-bindsym Mod3+l exec mplayer /home/corn/sounds/loituma.mp3
-bindsym Mod3+h exec mplayer /home/corn/sounds/airhorn.mp3
-bindsym Mod3+q exec mplayer /home/corn/sounds/penguins_squids.mp3
+bindsym Mod3+s exec mplayer -cache-min 50  /home/corn/sounds/spanishflea.mp3
+bindsym Mod3+r exec mplayer -cache-min 50  /home/corn/sounds/rimshot.mp3
+bindsym Mod3+t exec mplayer -cache-min 50  /home/corn/sounds/troete.ogg
+bindsym Mod3+f exec mplayer -cache-min 50  /home/corn/sounds/fullbridgerectifier.m4a
+bindsym Mod3+a exec mplayer  -cache-min 50 /home/corn/sounds/sadtrombone.mp3
+bindsym Mod3+b exec mplayer  -cache-min 50 /home/corn/sounds/buzzer.ogg
+bindsym Mod3+g exec mplayer -cache-min 50  /home/corn/sounds/gg.mp3
+bindsym Mod3+c exec mplayer -cache-min 50  /home/corn/sounds/scratch.ogg
+bindsym Mod3+n exec mplayer -cache-min 50  /home/corn/sounds/nootnoot.mp3
+bindsym Mod3+2 exec mplayer -cache-min 50  /home/corn/sounds/24hours.mp3
+bindsym Mod3+p exec mplayer -cache-min 50  /home/corn/sounds/applause.mp3
+bindsym Mod3+k exec mplayer -cache-min 50  /home/corn/sounds/kidsyeah.ogg
+bindsym Mod3+e exec mplayer -cache-min 50  /home/corn/sounds/rewind.ogg
+bindsym Mod3+j exec mplayer -cache-min 50  /home/corn/sounds/jeopardy.mp3
+bindsym Mod3+o exec mplayer -cache-min 50  /home/corn/sounds/badadipoopi.mp3
+bindsym Mod3+i exec mplayer -cache-min 50  /home/corn/sounds/bike_horn.mp3
+bindsym Mod3+d exec mplayer -cache-min 50  /home/corn/sounds/dora.mp3
+bindcode Mod3+47 exec mplayer -cache-min 50  /home/corn/sounds/hwnpbööh.mp3
+bindsym Mod3+w exec mplayer -cache-min 50  /home/corn/sounds/oopsydaisy.mp3
+bindsym Mod3+y exec mplayer -cache-min 50  /home/corn/sounds/bennyhill.mp3
+bindsym Mod3+l exec mplayer  -cache-min 50 /home/corn/sounds/loituma.mp3
+bindsym Mod3+h exec mplayer  -cache-min 50 /home/corn/sounds/airhorn.mp3
+bindsym Mod3+q exec mplayer -cache-min 50  /home/corn/sounds/penguins_squids.mp3
