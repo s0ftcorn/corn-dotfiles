@@ -15,6 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below. ISO 10646 = Unicode
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font pango:Inconsolata 11px
+#font pango:Mensch 8
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
@@ -150,16 +151,22 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         #status_command 	i3status #~/.i3/statusbar_windowtitle.sh
-	status_command ~/GIT/pyStatus/example_runner.py
+	#status_command ~/GIT/pyStatus/example_runner.py
+	status_command ~/conky-i3bar
 	position 	top
 }
 
+#Workspace-Variablen setzen
+set $WS1 1:web
+set $WS2 2:mail
+set $WS10 10:irssi
+
 #chrome immer auf 1:web
-assign [class="Google-chrome-stable"] → 1:web
+assign [class="Google-chrome-stable|google-chrome"] → $WS1
 #thunderbird immer auf 2:mail
-assign [class="Mail"] → 2:mail
+assign [class="Mail|Thunderbird"] → $WS2
 #urxvt+irssi immer auf 10:irssi
-assign [class="^URxvt$" title="irssi  /home/corn"] → 10:irssi
+assign [class="^URxvt$" title="irssi  /home/corn"] → $WS10
 
 #dropbox
 #exec --no-startup-id dropboxd
@@ -172,7 +179,7 @@ bindsym XF86ScreenSaver exec slimlock
 # compositing makes everything better
 exec --no-startup-id compton -CGb
 # dunst for notification
-exec --no-startup-id dunst
+exec --no-startup-id twmnd
 # Mediakeys woop woop
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse set Master playback 7%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse set Master playback 7%- unmute

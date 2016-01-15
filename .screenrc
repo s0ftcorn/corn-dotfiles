@@ -1,0 +1,24 @@
+# Statusbar
+hardstatus off
+hardstatus alwayslastline
+# hardstatus string "%{+b wk} %-w%{+b wk} %n %t %{-}%+w %41=%H @ %l %-= %= %D, %c:%s "
+hardstatus string "%{+b wk} %-w%{+b wB} %n %t %{-}%+w %41=%H @ %l %-= %= %D, %c:%s "
+
+# Windows opening by default
+screen -t "BASH" 1 
+#screen -t "MPD" 2 ncmpc --config=/home/esquiso/.config/mpd/ncmpc
+#screen -t "IRC" 3 irssi
+#screen -t "HTOP" 4 htop
+
+# COLORS! and some usefull terminfo
+term screen-256color
+terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+# Do not show startup message
+startup_message off
+
+#UTF-8 support
+defutf8 on
+
+# Bell magic
+vbell on
