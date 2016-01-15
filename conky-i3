@@ -1,0 +1,73 @@
+out_to_x no
+out_to_console yes
+short_units yes
+update_interval 1
+
+TEXT
+
+[\
+# CPU temperature:
+{"full_text":"CPU:","color":"\#c0c0c0","separator":false,"separator_block_width":6},\
+{"full_text":"${if_match ${acpitemp}<60}${acpitemp}°C","color":"\#00ff00","separator":false,"separator_block_width":6},\
+{"full_text":"${else}"},\
+{"full_text":"${if_match ${acpitemp}<75}${acpitemp}°C","color":"\#ffdd12","separator":false,"separator_block_width":6},\
+{"full_text":"${else}"},\
+{"full_text":"${if_match ${acpitemp}>=75}${acpitemp}°C","color":"\#dd2828","separator":false,"separator_block_width":6},\
+{"full_text":"${else}"},\
+{"full_text":"${endif}${endif}${endif}"},\
+# Download:
+{"full_text":"DOWN:","color":"\#c0c0c0","separator":false,"separator_block_width":6},\
+{"full_text":"${if_match ${downspeedf wlp3s0}<1000}${downspeed wlp3s0}","color":"\#00ff00","separator":false,"separator_block_width":6},\
+{"full_text":"${else}"},\
+{"full_text":"${if_match ${downspeedf wlp3s0}<3000}${downspeed wlp3s0}","color":"\#ffdd12","separator":false,"separator_block_width":6},\
+{"full_text":"${else}"},\
+{"full_text":"${if_match ${downspeedf wlp3s0}>=3000}${downspeed wlp3s0}","color":"\#dd2828","separator":false,"separator_block_width":6},\
+{"full_text":"${endif}${endif}${endif}"},\
+# Upload:
+{"full_text":"UP:","color":"\#c0c0c0","separator":false,"separator_block_width":6},\
+{"full_text":"${if_match ${upspeedf wlp3s0}<300}${upspeed wlp3s0}","color":"\#00ff00","separator":false,"separator_block_width":6},\
+{"full_text":"${else}"},\
+{"full_text":"${if_match ${upspeedf wlp3s0}<800}${upspeed wlp3s0}","color":"\#ffdd12","separator":false,"separator_block_width":6},\
+{"full_text":"${else}"},\
+{"full_text":"${if_match ${upspeedf wlp3s0}>=800}${upspeed wlp3s0}","color":"\#dd2828","separator":false,"separator_block_width":6},\
+{"full_text":"${endif}${endif}${endif}"},\
+# Memory:
+{"full_text":"MEM:","color":"\#c0c0c0","separator":false,"separator_block_width":6},\
+{"full_text":"${if_match ${memperc}<30}${memperc}%","color":"\#00ff00","separator":false,"separator_block_width":6},\
+{"full_text":"${else}"},\
+{"full_text":"${if_match ${memperc}<70}${memperc}%","color":"\#ffdd12","separator":false,"separator_block_width":6},\
+{"full_text":"${else}"},\
+{"full_text":"${if_match ${memperc}>=70}${memperc}%","color":"\#dd2828","separator":false,"separator_block_width":6},\
+{"full_text":"${endif}${endif}${endif}"},\
+# CPU:
+{"full_text":"CPU:","color":"\#c0c0c0","separator":false,"separator_block_width":6},\
+{"full_text":"${if_match ${cpu cpu0}<50}${cpu cpu0}%","color":"\#00ff00","separator":false,"separator_block_width":6},\
+{"full_text":"${else}"},\
+{"full_text":"${if_match ${cpu cpu0}<60E}${cpu cpu0}%","color":"\#ffdd12","separator":false,"separator_block_width":6},\
+{"full_text":"${else}"},\
+{"full_text":"${if_match ${cpu cpu0}<=100}${cpu cpu0}%","color":"\#dd2828","separator":false,"separator_block_width":6},\
+{"full_text":"${endif}${endif}${endif}"},\
+# Battery:
+{"full_text":"BAT:","color":"\#c0c0c0","separator":false,"separator_block_width":6},\
+{"full_text":"${if_match ${battery_percent}<30}${exec acpi -b | awk "{print $1}" | sed 's/\([^:]*\): \([^,]*\), \([0-9]*\)%.*/\2/' | cut -c 1 | head -n 1}${battery_percent}%","color":"\#dd2828","separator":false,"separator_block_width":6},\
+{"full_text":"${else}"},\
+{"full_text":"${if_match ${battery_percent}<50}${exec acpi -b | awk "{print $1}" | sed 's/\([^:]*\): \([^,]*\), \([0-9]*\)%.*/\2/' | cut -c 1 | head -n 1}${battery_percent}%","color":"\#ffdd12","separator":false,"separator_block_width":6},\
+{"full_text":"${else}"},\
+{"full_text":"${if_match ${battery_percent}>=70}${exec acpi -b | awk "{print $1}" | sed 's/\([^:]*\): \([^,]*\), \([0-9]*\)%.*/\2/' | cut -c 1 | head -n 1}:${battery_percent}%","color":"\#00ff00","separator":false,"separator_block_width":6},\
+{"full_text":"${endif}${endif}${endif}"},\
+# Disk Usage
+{"full_text":"/:","color":"\#c0c0c0","separator":false,"separator_block_width":6},\
+{"full_text":"${fs_free /}","color":"\#00ff00","separator":false},\
+# Volume:
+{"full_text":"VOL:","color":"\#c0c0c0","separator":false,"separator_block_width":6},\
+{"full_text":"${execi 1 amixer sget Master,0 | egrep -o '([0-9]+%|\[(on|off)\])' | sed ':a;N;$!ba;s/\n/ /g'}","color":"\#00ff00","separator":false},\
+# Weather
+{"full_text":"|","color":"\#c0c0c0","separator":false,"separator_block_width":6},\
+{"full_text":"${exec ~/GIT/corn-dotfiles/i3/weather.sh GMXX0024 | head -n 1}","color":"\#c0c0c0","separator":false},\
+# Date:
+{"full_text":"|","color":"\#c0c0c0","separator":false,"separator_block_width":6},\
+{"full_text":"${time %a:%d.%m.%y}","color":"\#c0c0c0","separator":false,"separator_block_width":6},\
+# Time:
+{"full_text":"|","color":"\#c0c0c0","separator":false,"separator_block_width":6},\
+{"full_text":"${time %H:%M}","color":"\#c0c0c0","separator":false}\
+],
