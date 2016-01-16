@@ -1,3 +1,4 @@
+set encoding=utf-8
 cmap w!! w !sudo tee > /dev/null %
 syntax enable
 colorscheme desert
