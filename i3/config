@@ -151,8 +151,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         #status_command 	i3status #~/.i3/statusbar_windowtitle.sh
-	#status_command ~/GIT/pyStatus/example_runner.py
-	status_command ~/conky-i3bar
+	status_command ~/GIT/pyStatus/example_runner.py
+	#status_command ~/conky-i3bar
 	position 	top
 }
 
