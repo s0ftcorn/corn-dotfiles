@@ -201,7 +201,7 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 
 #brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 15
-bindsym XF86MonBrightnessDown exec xbacklight -dec 15
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # Shutdown, Reboot, Lock Screen, and Logout #657b83
 set $sysmenu "system:  [P]oweroff  re[B]oot  [L]ock  [S]uspend "
